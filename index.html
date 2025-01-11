@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MY ZULQARNAIN🤍</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #0f062e;
+      background-size: cover;
+      background-position: center;
+      background-image: url('bg.jpg');
+      position: relative;
+      margin: 0;
+    }
+
+    /* Typing Animation for text */
+    .typing {
+      font-family: 'Times New Roman', cursive;
+      font-size: 18px;
+      color: #fff;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 4px solid #fff;
+      width: auto;
+      animation: typing 4s steps(30) infinite, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      50% {
+        width: auto;
+      }
+      100% {
+        width: 0;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+
+    .birthdayCard {
+      position: relative;
+      width: 250px;
+      height: 350px;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transform: perspective(2500px);
+      transition: 1s;
+    }
+
+    @media (min-width: 786px) {
+      .birthdayCard {
+        width: 300px;
+        height: 400px;
+      }
+    }
+
+    .cardFront {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-image: url('card.png'); /* Replace with your image URL */
+      transform-origin: left;
+      box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 30px 0 50px rgba(0, 0, 0, 0.4);
+      transition: .6s;
+    }
+
+    .cardInside {
+      position: absolute;
+      background-color: #3e455e;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .videoContainer {
+      width: 60%;
+      height: 80%;
+      margin-left: 20px;
+      margin-top: -20% !important;
+    }
+
+    .videoContainer video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+    }
+
+    .birthdayCard:hover .videoContainer video {
+      display: block;
+    }
+
+    .verticalText {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      font-family: 'Times New Roman', cursive;
+      font-size: 16px;
+      color: #fff;
+      text-align: center;
+      height: 100%;
+      margin-right: 25px;
+      margin-top: -17% !important;
+    }
+
+    .wishes {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      color: #fff;
+      font-family: 'Times new roman', cursive;
+      font-size: 16px;
+      line-height: 1%;
+    }
+
+    @media (min-width: 786px) {
+      .wishes {
+        font-size: 18px;
+      }
+      .verticalText {
+      font-size: 20px;
+    }
+    .typing {
+      font-size: 30px;
+    }
+    }
+
+    .birthdayCard:hover {
+      transform: perspective(2500px) rotate(5deg);
+      box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2), 0 10px 100px rgba(0, 0, 0, 0.5);
+    }
+
+    .birthdayCard:hover .cardFront {
+      transform: rotateY(-160deg);
+    }
+  </style>
+</head>
+<body>
+  <!-- Typing Text -->
+  <div class="typing">HAPPY BIRTHDAY ZULQARNAIN 🤍!!</div>
+
+  <div class="birthdayCard">
+    <div class="cardFront"></div>
+    <div class="cardInside">
+      <div class="videoContainer">
+        <video src="card.mp4"></video>
+      </div>
+      <div class="verticalText">
+        MR ZULQARNAIN❤
+      </div>
+      <div class="wishes">
+        <p>Wishing you joy !</p>
+        <p>Success in all your endeavors !</p>
+        <p>Have a fantastic day !</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const card = document.querySelector('.birthdayCard');
+    const video = document.querySelector('.videoContainer video');
+
+    card.addEventListener('mouseenter', () => {
+      video.play();
+    });
+
+    card.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0; // Reset video to start
+    });
+  </script>
+</body>
+</html>
