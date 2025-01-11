@@ -158,6 +158,20 @@
     .birthdayCard:hover .cardFront {
       transform: rotateY(-160deg);
     }
+
+    /* Instruction Text */
+    .instruction {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      color: #fff;
+      font-family: 'Times New Roman', cursive;
+      font-size: 18px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
@@ -180,6 +194,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Instruction Text -->
+  <div class="instruction">Click the card to reveal a surprise!</div>
 
   <script>
     const card = document.querySelector('.birthdayCard');
